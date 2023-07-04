@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Type some info">
+    <meta name="author" content="Type name">
+
+    <title>Hale Pharmacy | Online Shop </title>
+
+    <!-- Bootstrap css -->
+    <link href="../assets/css/bootstrap.css?v=2.0" rel="stylesheet" type="text/css" />
+
+    <!-- Custom css -->
+    <link href="../assets/css/ui.css?v=2.0" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/responsive.css?v=2.0" rel="stylesheet" type="text/css" />
+
+    <!-- Font awesome 5 -->
+    <link href="../assets/fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+        .btn {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header class="section-header">
+        <section class="header-main">
+            <div class="container">
+                <div class="row gy-3 align-items-center">
+                    <div class="col-lg-2 col-sm-4 col-4">
+                        <a href="http://bootstrap-ecommerce.com" class="navbar-brand">
+						<img class="logo" height="50" width="100px" src="../assets/images/logo/hale_logo1.png">
+					</a>
+                        <!-- brand end.// -->
+                    </div>
+                    <div class="order-lg-last col-lg-5 col-sm-8 col-8">
+                        <div class="float-end">
+                            <a href="/Register" class="btn btn-light"> 
+						    <i class="fa fa-user"></i>  <span class="ms-1 d-none d-sm-inline-block">Sign in  </span> 
+						</a>
+                            
+                        <div id="MyCartBtn">
+                            <a data-bs-toggle="offcanvas" href="#offcanvas_cart" class="btn btn-light"> 
+                                <i class="fa fa-shopping-cart"></i> <span class="ms-1">My cart <span class="badge rounded-pill bg-danger" id="CartNumber">0</span></span>  
+                               
+                              </a>
+                        </div>
+                           
+                        </div>
+                    </div>
+
+
+                    <!-- col end.// -->
+                    <div class="col-lg-5 col-md-12 col-12">
+                        <form action="#" class="">
+                            <div class="input-group">
+                                <input type="search" class="form-control" style="width:55%" placeholder="Search">
+                                <select class="form-select">
+		                  <option value="">All type</option>
+		                  <option value="codex">Special</option>
+		                  <option value="comments">Only best</option>
+		                  <option value="content">Latest</option>
+		                </select>
+                                <button class="btn btn-success">
+		                  <i class="fa fa-search"></i> 
+		                </button>
+                            </div>
+                            <!-- input-group end.// -->
+                        </form>
+                    </div>
+                    <!-- col end.// -->
+
+                </div>
+                <!-- row end.// -->
+            </div>
+            <!-- container end.// -->
+        </section>
+        <!-- header-main end.// -->
+
+        <nav class="navbar navbar-light bg-white border-top navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+                <div class="collapse navbar-collapse" id="navbar_main">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link ps-0" href="#"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-0" href="/Productlisting"> Products </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ps-0" href="/products"> Medical Devices </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Health Tips</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                       
+                        <li class="nav-item dropdown" >
+                            <a class="dropdown-toggle nav-link" href="#" data-bs-toggle="dropdown">
+							Account
+						</a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" id="MyCartBtnthree" >Cart 
+                              
+                              <span style="position: absolute;right:5px" class="badge rounded-pill bg-success"  id="Cartmenutwotwo">0</span> </a> </li>
+                              <li> <a class="dropdown-item" id="Checkoutbuttontwo">Checkout  <span  style="position: absolute;right:5px" class="badge rounded-pill bg-warning"id="CheckOutID">0</span></a> </li>
+                              <li> <a class="dropdown-item" id="Historytbuttontwo">History <span style="position: absolute;right:5px" class="badge rounded-pill bg-primary" id="HistoryID">0</span></a> </li>
+                              <li> <a class="dropdown-item" href="#">Payment</a> </li>
+                              <li> <a class="dropdown-item" href="#">Terms & Conditions</a> </li>
+                              <li> <a class="dropdown-item" href="/Login"> <i class="fa fa-user"></i>   Login</a> </li>
+                          </ul>
+                        </li>
+                    </ul>
+                </div>
+            
+            </div>
+
+        </nav>
+
+    </header>
+  
+
+
+
+
+
+    <!-- ============== SECTION PAGETOP ============== -->
+    <section class="bg-success py-5">
+        <div class="container">
+            <h2 class="text-white">Our Product</h2>
+            <ol class="breadcrumb ondark mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Hale Pharmacy</li>
+            </ol>
+        </div>
+        <!-- container //  -->
+    </section>
+    <!-- ============== SECTION PAGETOP END// ============== -->
+
+    <!-- ============== SECTION CONTENT ============== -->
+    <section class="padding-y">
+        <div class="container">
+
+            <div class="row">
+                <aside class="col-lg-3">
+
+                    <button class="btn btn-outline-secondary mb-3 w-100  d-lg-none" data-bs-toggle="collapse" data-bs-target="#aside_filter">Show filter</button>
+
+                    <!-- ===== Card for sidebar filter ===== -->
+                    <div id="aside_filter" class="collapse card d-lg-block mb-5">
+
+                        <article class="filter-group">
+                            <header class="card-header">
+                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside1">
+        <i class="icon-control fa fa-chevron-down"></i>   Related items 
+      </a>
+                            </header>
+                            <div class="collapse show" id="collapse_aside1">
+                                <div class="card-body">
+                                    <ul class="list-menu">
+                                        <li><a href="#">Electronics </a></li>
+                                        <li><a href="#">Accessories  </a></li>
+                                        <li><a href="#">Home items </a></li>
+                                        <li><a href="#">Men's clothing </a></li>
+                                        <li><a href="#">Interior items </a></li>
+                                        <li><a href="#">Magazines </a></li>
+                                        <li><a href="#">Category name </a></li>
+                                        <li><a href="#">Home items </a></li>
+                                    </ul>
+                                </div>
+                                <!-- card-body.// -->
+                            </div>
+                            <!-- collapse.// -->
+                        </article>
+                        <!-- filter-group // -->
+
+                        <article class="filter-group">
+                            <header class="card-header">
+                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands">
+        <i class="icon-control fa fa-chevron-down"></i>  Brands 
+      </a>
+                            </header>
+                            <div class="collapse show" id="collapse_aside_brands">
+                                <div class="card-body">
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked>
+            <span class="form-check-label"> Mercedes </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">120</b>
+          </label>
+                                    <!-- form-check end.// -->
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked>
+            <span class="form-check-label"> Toyota </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">15</b>
+          </label>
+                                    <!-- form-check end.// -->
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked>
+            <span class="form-check-label"> Mitsubishi </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">35</b>
+          </label>
+                                    <!-- form-check end.// -->
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked>
+            <span class="form-check-label"> Nissan </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">89</b>
+          </label>
+                                    <!-- form-check end.// -->
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="">
+            <span class="form-check-label"> Honda </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">30</b>
+          </label>
+                                    <!-- form-check end.// -->
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="">
+            <span class="form-check-label"> Honda accord </span>
+            <b class="badge rounded-pill bg-gray-dark float-end">30</b>
+          </label>
+                                    <!-- form-check end.// -->
+                                </div>
+                                <!-- card-body .// -->
+                            </div>
+                            <!-- collapse.// -->
+                        </article>
+
+                        <article class="filter-group">
+                            <header class="card-header">
+                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside2">
+        <i class="icon-control fa fa-chevron-down"></i>  Price 
+      </a>
+                            </header>
+                            <div class="collapse show" id="collapse_aside2">
+                                <div class="card-body">
+                                    <input type="range" class="form-range" min="0" max="100">
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                            <label for="min" class="form-label">Min</label>
+                                            <input class="form-control" id="min" placeholder="$0" type="number">
+                                        </div>
+                                        <!-- col end.// -->
+
+                                        <div class="col-6">
+                                            <label for="max" class="form-label">Max</label>
+                                            <input class="form-control" id="max" placeholder="$1,0000" type="number">
+                                        </div>
+                                        <!-- col end.// -->
+                                    </div>
+                                    <!-- row end.// -->
+                                    <button class="btn btn-light w-100" type="button">Apply</button>
+                                </div>
+                                <!-- card-body.// -->
+                            </div>
+                            <!-- collapse.// -->
+                        </article>
+                        <!-- filter-group // -->
+
+                        <article class="filter-group">
+                            <header class="card-header">
+                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside3">
+        <i class="icon-control fa fa-chevron-down"></i>  Size 
+      </a>
+                            </header>
+                            <div class="collapse show" id="collapse_aside3">
+                                <div class="card-body">
+                                    <label class="checkbox-btn">
+            <input type="checkbox">
+            <span class="btn btn-light"> XS </span>
+          </label>
+
+                                    <label class="checkbox-btn">
+            <input type="checkbox">
+            <span class="btn btn-light"> SM </span>
+          </label>
+
+                                    <label class="checkbox-btn">
+            <input type="checkbox">
+            <span class="btn btn-light"> LG </span>
+          </label>
+
+                                    <label class="checkbox-btn">
+            <input type="checkbox">
+            <span class="btn btn-light"> XXL </span>
+          </label>
+                                </div>
+                                <!-- card-body.// -->
+                            </div>
+                            <!-- collapse.// -->
+                        </article>
+                        <!-- filter-group // -->
+
+                        <article class="filter-group">
+                            <header class="card-header">
+                                <a href="#" class="title" data-bs-toggle="collapse" data-bs-target="#collapse_aside4">
+        <i class="icon-control fa fa-chevron-down"></i> Ratings
+      </a>
+                            </header>
+                            <div class="collapse show" id="collapse_aside4">
+                                <div class="card-body">
+
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked="">
+            <span class="form-check-label">
+              <ul class="rating-stars">
+                <li class="stars-active" style="width: 100%;">
+                  <img src="images/misc/stars-active.svg" alt="">
+                </li>
+                <li> <img src="images/misc/starts-disable.svg" alt="">  </li>
+              </ul>
+            </span>
+          </label>
+                                    <!-- form-check end.// -->
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked="">
+            <span class="form-check-label">
+              <ul class="rating-stars">
+                <li class="stars-active" style="width: 80%;">
+                  <img src="images/misc/stars-active.svg" alt="">
+                </li>
+                <li> <img src="images/misc/starts-disable.svg" alt="">  </li>
+              </ul>
+            </span>
+          </label>
+                                    <!-- form-check end.// -->
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked="">
+            <span class="form-check-label">
+              <ul class="rating-stars">
+                <li class="stars-active" style="width: 60%;">
+                  <img src="images/misc/stars-active.svg" alt="">
+                </li>
+                <li> <img src="images/misc/starts-disable.svg" alt="">  </li>
+              </ul>
+            </span>
+          </label>
+                                    <!-- form-check end.// -->
+                                    <label class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" value="" checked="">
+            <span class="form-check-label">
+              <ul class="rating-stars">
+                <li class="stars-active" style="width: 40%;">
+                  <img src="images/misc/stars-active.svg" alt="">
+                </li>
+                <li> <img src="images/misc/starts-disable.svg" alt="">  </li>
+              </ul>
+            </span>
+          </label>
+                                    <!-- form-check end.// -->
+
+
+                                </div>
+                                <!-- card-body.// -->
+                            </div>
+                            <!-- collapse.// -->
+                        </article>
+                        <!-- filter-group // -->
+
+                    </div>
+                    <!-- card.// -->
+                    <!-- ===== Card for sidebar filter .// ===== -->
+
+                </aside>
+                <!-- col .// -->
+                <main class="col-lg-9">
+
+                    <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+                        <strong class="d-block py-2">7 Items found </strong>
+                        <div class="ms-auto">
+                            <select class="form-select d-inline-block w-auto">
+              <option value="0">Best match</option>
+              <option value="1">Recommended</option>
+              <option value="2">High rated</option>
+              <option value="3">Randomly</option>
+          </select>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-light" data-bs-toggle="tooltip" title="List view"> 
+              <i class="fa fa-bars"></i>
+            </a>
+                                <a href="#" class="btn btn-light active" data-bs-toggle="tooltip" title="Grid view"> 
+              <i class="fa fa-th"></i>
+            </a>
+                            </div>
+                            <!-- btn-group end.// -->
+                        </div>
+                    </header>
+
+                    <!-- ========= content items ========= -->
+                    <div class="row">
+                        <%if(ListDrugs.length > 0){ %>
+                            <% ListDrugs.forEach(function(row, index){%>
+                        <div class="col-lg-2 col-md-6 col-sm-6" href="/Productinfomation?KeyOne=<%= row.UserName %>&KeyTwo=<%= row.Drug_Type %>&KeyThree=<%= row.ProductID%>">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="/Image/<%= row.md5 %>/<%= row.filename%>">
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <div class="price-wrap">
+                                        <strong class="price">GH₵<%= (row.Selling_price) %></strong>
+                                        
+                                    </div>
+                                    <!-- price-wrap.// -->
+                                    <p class="title mb-2"><%= row.Product_Name %></p>
+                                    
+                                    <div class="Addtocartbtn">
+                                        <a class="btn btn-sm btn-outline-success">  Add to cart</a>
+                                        <span style="display: none;"><%= row.ProductID %></span>
+                                        <span style="display: none;"><%= row.Selling_price %></span>
+                                        <span style="display: none;"><%= row.Product_Name %></span>
+                                        <span style="display: none;"><%= row.UserName %></span>
+                                        <span style="display: none;"><%= row.inputEmail %></span>
+                                        <span style="display: none;"><%= row.md5 %></span>
+                                        <span style="display: none;"><%= row.filename %></span>
+                                        <span style="display: none;"><%= row.Drug_Type %></span>
+
+                                    </div>
+                                    
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <%});%>
+                        <%}else{%>  
+                        
+                    <% } %>
+                        <!-- col end.// -->
+
+                      
+                        <!-- col end.// -->
+
+                       
+                        <!-- col end.// -->
+
+                        <!-- col end.// -->
+
+                    
+                        <!-- col end.// -->
+
+                      
+                        <!-- col end.// -->
+
+                      
+                        <!-- col end.// -->
+
+                     
+                        <!-- col end.// -->
+
+                      
+                        <!-- col end.// -->
+                    </div>
+                    <!-- row end.// -->
+
+                    <hr>
+
+                    <footer class="d-flex mt-4">
+                        <div>
+                            <a href="javascript: history.back()" class="btn btn-light"> &laquo; Go back</a>
+                        </div>
+                        <nav class="ms-3">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active" aria-current="page">
+                                    <span class="page-link">2</span>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </footer>
+
+                    <!-- ========= content items .// ========= -->
+
+
+
+                </main>
+                <!-- col .// -->
+            </div>
+            <!-- row .// -->
+
+        </div>
+        <!-- container .//  -->
+    </section>
+    <!-- ============== SECTION CONTENT END// ============== -->
+
+
+
+    <footer class="section-footer bg-primary footer-dark">
+        <div class="container">
+            <section class="footer-main padding-y">
+                <div class="row">
+                    <aside class="col-12 col-sm-12 col-lg-3">
+                        <article class="me-lg-4">
+                            <img src="images/logo-white.png" class="logo-footer">
+                            <p class="mt-3"> © 2018- 2021 Templatemount. <br> All rights reserved. </p>
+                        </article>
+                    </aside>
+                    <aside class="col-6 col-sm-4 col-lg-2">
+                        <h6 class="title">Store</h6>
+                        <ul class="list-menu">
+                            <li> <a href="#">About us</a></li>
+                            <li> <a href="#">Find store</a></li>
+                            <li> <a href="#">Categories</a></li>
+                            <li> <a href="#">Blogs</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-6 col-sm-4 col-lg-2">
+                        <h6 class="title">Information</h6>
+                        <ul class="list-menu">
+                            <li> <a href="#">Help center</a></li>
+                            <li> <a href="#">Money refund</a></li>
+                            <li> <a href="#">Shipping info</a></li>
+                            <li> <a href="#">Refunds</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-6 col-sm-4  col-lg-2">
+                        <h6 class="title">Support</h6>
+                        <ul class="list-menu">
+                            <li> <a href="#"> Help center </a></li>
+                            <li> <a href="#"> Documents </a></li>
+                            <li> <a href="#"> Account restore </a></li>
+                            <li> <a href="#"> My Orders </a></li>
+                        </ul>
+                    </aside>
+                    <aside class="col-12 col-sm-12 col-lg-3">
+                        <h6 class="title">Newsletter</h6>
+                        <p>Stay in touch with latest updates about our products and offers </p>
+
+                        <form class="mb-3">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Email">
+                                <button class="btn btn-light" type="submit">
+              Join
+            </button>
+                            </div>
+                            <!-- input-group.// -->
+                        </form>
+                    </aside>
+                </div>
+                <!-- row.// -->
+            </section>
+            <!-- footer-top.// -->
+            <hr class="my-0">
+            <section class="footer-bottom d-flex justify-content-lg-between">
+                <div>
+                    <i class="fab fa-lg fa-cc-visa"></i>
+                    <i class="fab fa-lg fa-cc-amex"></i>
+                    <i class="fab fa-lg fa-cc-mastercard"></i>
+                    <i class="fab fa-lg fa-cc-paypal"></i>
+                </div>
+             
+
+            </section>
+        </div>
+        <!-- container end.// -->
+    </footer>
+
+
+    <!-- Bootstrap js -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom js -->
+    <script src="../assets/js/script.js?v=2.0"></script>
+    <script type="text/javascript">
+        //     $(function () {
+             
+        //     $('#myDiv').floatingWhatsApp({
+        //     phone: '0555667719',
+        //     popupMessage: 'Hello, welcome to Hale Pharmacy',
+        //     showPopup: true,
+        //     headerTilte: "Hale Pharmacy Customer Service",
+        //     message: "How can we help you today",
+        //     position: "right",
+        //     });
+        
+        
+        
+        // });
+        var Status
+      checkCookie()
+      CheckCart(Status)
+      CheckStatus(Status)
+      
+      function CheckStatus(Status){
+        if(Status === 'Loggedinuser'){
+            CheckOutuserfunction()
+            UserHistoryfxn()
+        }else{
+          CheckOutfxn()
+          Historyfxn()  
+        }
+      }
+      document.getElementById('MyCartBtn').addEventListener('click', function(){
+        alert('hi')
+         Opencartbtn(Status)
+       })  
+      
+       document.getElementById('MyCartBtnthree').addEventListener('click', function(){
+        //alert('hi')
+         Opencartbtn(Status)
+       })  
+      
+       document.getElementById('Checkoutbuttontwo').addEventListener('click', function(event){
+        OpenCheckoutbtn(Status)
+      
+       })  
+      
+      
+       document.getElementById('Historytbuttontwo').addEventListener('click', function(){
+          OpenHistoryButton(Status)
+       })
+       
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      
+      function getCookie(cname) {
+        let name = cname + "=";
+        let ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      
+      
+      
+      function checkCookie() {
+        let haleStatus = getCookie("halestatus");
+        if (haleStatus !== "" ) {
+           Status = getCookie("halestatus")
+         // alert(Status);
+        } else {
+           Status = "quest"
+        }
+      }
+      
+      
+      $('.Addtocartbtn'). click(function(e){
+        if(Status === "Loggedinuser"){
+               let MyID
+               let Identity = getCookie("inputEmail")
+               let cartidone = getCookie("cartID")
+               if(cartidone === ''){
+                
+                 let id = () => {
+                 return Math.floor((1 + Math.random()) * 0x100000000)
+                     .toString(16)
+                     .substring(1);
+               }
+                   MyID = id()
+
+               }else{
+                    MyID = cartidone
+                    alert(MyID)
+               }
+               
+              //  alert(MyID)
+      
+                let ProductID = $(this).children().eq(1).text()
+                let Selling_price = $(this).children().eq(2).text()
+                let Product_Name = $(this).children().eq(3).text()
+                let UserName = $(this).children().eq(4).text()
+                let inputEmail = $(this).children().eq(5).text()
+                let md5 = $(this).children().eq(6).text()
+                let filename = $(this).children().eq(7).text()
+                let Quality = 1
+                let Drug_Type= $(this).children().eq(8).text()
+                let Description = $(this).children().eq(9).text()
+      
+                let Data = {Product_Name:Product_Name, Selling_price:Selling_price, ProductID:ProductID, UserName:UserName, inputEmail:inputEmail, filename:filename, md5:md5, Quantity:Quality, CartID:MyID, userStatus:Status, Drug_Type:Drug_Type, Description:Description, Identity:Identity, CartNumber:Identity }
+                alert(ProductID)
+      
+                $.ajax({
+                        type: 'POST',
+                        url: '/Addproducttocartuser',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                          alert(`${data.Mes} has been added to your cart`)
+                          var CartQty = Number(document.getElementById('CartNumber').textContent) + Quality
+                           document.getElementById('CartNumber').textContent = CartQty
+                           document.getElementById('Cartmenutwotwo').textContent = CartQty
+                         
+                           setCookie("cartID", MyID, 365)
+                        }
+                     })
+      
+           }
+      
+          else if(Status === "Visitor"){
+            // alert(Status)
+      
+                let cartID = getCookie("cartID")
+                 let Cartnumber = getCookie("Cartnumber")
+      
+                 
+                let ProductID = $(this).children().eq(1).text()
+                let Selling_price = $(this).children().eq(2).text()
+                let Product_Name = $(this).children().eq(3).text()
+                let UserName = $(this).children().eq(4).text()
+                let inputEmail = $(this).children().eq(5).text()
+                let md5 = $(this).children().eq(6).text()
+                let filename = $(this).children().eq(7).text()
+                let Quality = 1
+                let Drug_Type= $(this).children().eq(8).text()
+                let Description = $(this).children().eq(9).text()
+      
+                let Data = {Product_Name:Product_Name, Selling_price:Selling_price, ProductID:ProductID, UserName:UserName, inputEmail:inputEmail, filename:filename, md5:md5, Quantity:Quality, CartID:cartID, Cartnumber:Cartnumber, userStatus:Status, Drug_Type:Drug_Type, Description:Description, Identity:"Visitor" }
+                //alert(ProductID)
+      
+                $.ajax({
+                        type: 'POST',
+                        url: '/Addproducttocartvisitor',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                          alert(`${data.Mes} has been added to your cart`)
+                          var CartQty = Number(document.getElementById('CartNumber').textContent) + Quality
+                           document.getElementById('CartNumber').textContent = CartQty
+                           document.getElementById('Cartmenutwotwo').textContent = CartQty
+                          
+                        }
+                     })
+      
+           
+          }else {
+      
+        
+            let id = () => {
+                 return Math.floor((1 + Math.random()) * 0x100000000)
+                     .toString(16)
+                     .substring(1);
+               }
+               let MyID = id()
+               let Cartnumber = (new Date().getTime()).toString()
+              //  alert(MyID)
+      
+                let ProductID = $(this).children().eq(1).text()
+                let Selling_price = $(this).children().eq(2).text()
+                let Product_Name = $(this).children().eq(3).text()
+                let UserName = $(this).children().eq(4).text()
+                let inputEmail = $(this).children().eq(5).text()
+                let md5 = $(this).children().eq(6).text()
+                let filename = $(this).children().eq(7).text()
+                let Drug_Type= $(this).children().eq(8).text()
+                let Quality = 1
+                let Description = $(this).children().eq(9).text()
+      
+                let Data = {Product_Name:Product_Name, Selling_price:Selling_price, ProductID:ProductID, UserName:UserName, inputEmail:inputEmail, filename:filename, md5:md5, Quantity:Quality, CartID:MyID, Cartnumber:Cartnumber, userStatus:Status, Drug_Type:Drug_Type, Description:Description, Identity:"guest", }
+                //alert(Description)
+      
+                $.ajax({
+                        type: 'POST',
+                        url: 'Addproducttocartquest',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                          alert(`${data.Mes} has been added to your cart`)
+                          var CartQty = Number(document.getElementById('CartNumber').textContent) + Quality
+                           document.getElementById('CartNumber').textContent = CartQty
+                           document.getElementById('Cartmenutwotwo').textContent = CartQty
+                           setCookie("halestatus", "Visitor", 365)
+                           setCookie("Cartnumber", Cartnumber, 365)
+                           setCookie("cartID", MyID, 365)
+                          
+                        }
+                     })
+          }
+               
+      })
+      
+        
+      
+       function CheckCart(Status){
+       // alert('checking ....')
+        if(Status === "Visitor"){
+         
+                 let cartID = getCookie("cartID")
+                 let Cartnumber = getCookie("Cartnumber")
+            
+                 let Data = {CartID:cartID, CartNumber:Cartnumber}
+               //  alert(Cartnumber)
+                 $.ajax({
+                        type: 'POST',
+                        url: '/CheckVisitorcart',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                         //alert(data.Quantity)
+                           document.getElementById('CartNumber').textContent = data.Quantity
+                           document.getElementById('Cartmenutwotwo').textContent = data.Quantity
+                          
+                        }
+                     })
+      }
+       else if(Status === "Loggedinuser"){
+        //alert(Status)
+        let cartID = getCookie("cartID")
+        let Identity =  getCookie("inputEmail")
+                 let Data = {CartID:cartID,Identity:Identity }
+      
+                 $.ajax({
+                        type: 'POST',
+                        url: '/CheckUserCart',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                            document.getElementById('CartNumber').textContent = data.Quantity
+                           document.getElementById('Cartmenutwotwo').textContent = data.Quantity
+                          
+                        }
+                     })
+      }
+       }
+      
+      
+       function CheckOutfxn(){
+        let StoreID = getCookie("StoreID")
+        if(StoreID != ""){
+              let Data = {StoreID:StoreID}
+              // alert(StoreID)
+              $.ajax({
+                    type: 'POST',
+                    url: '/CheckVisitorCheckout',
+                    ContentType: 'application/json',
+                    data: Data,
+                    success: function(data) {
+                      //alert(data.Quantity)
+                        document.getElementById('CheckOutID').textContent = data.Quantity
+                      
+                      
+                    }
+                  })
+      }
+       else {
+        
+       }
+       }
+      
+
+
+       function CheckOutuserfunction(){
+        let Identity =  getCookie("inputEmail")
+        if(Identity != ""){
+              let Data = {Identity:Identity}
+              // alert(StoreID)
+              $.ajax({
+                    type: 'POST',
+                    url: '/CheckCheckoutuser',
+                    ContentType: 'application/json',
+                    data: Data,
+                    success: function(data) {
+                      //alert(data.Quantity)
+                        document.getElementById('CheckOutID').textContent = data.Quantity
+                      
+                      
+                    }
+                  })
+      }
+       else {
+        
+       }
+       }
+      
+       function Historyfxn(){
+        let StoreID = getCookie("StoreID")
+        if(StoreID != ""){
+              let Data = {StoreID:StoreID}
+              // alert(StoreID)
+              $.ajax({
+                    type: 'POST',
+                    url: '/CheckVisitorOrderhistory',
+                    ContentType: 'application/json',
+                    data: Data,
+                    success: function(data) {
+                      //alert(data.Quantity)
+                        document.getElementById('HistoryID').textContent = data.Quantity
+                      
+                      
+                    }
+                  })
+      }
+       else {
+        
+       }
+       }
+
+
+      
+       function UserHistoryfxn(){
+        let Identity =  getCookie("inputEmail")
+        if(Identity != ""){
+              let Data = {Identity:Identity}
+              // alert(StoreID)
+              $.ajax({
+                    type: 'POST',
+                    url: '/CheckOrderhistoryUser',
+                    ContentType: 'application/json',
+                    data: Data,
+                    success: function(data) {
+                      //alert(data.Quantity)
+                        document.getElementById('HistoryID').textContent = data.Quantity
+                      
+                      
+                    }
+                  })
+      }
+       else {
+        
+       }
+       } 
+
+   
+       
+
+       function Opencartbtn(Status){
+        alert('weee')
+        if(Status === "Visitor"){
+            let cartID = (getCookie("cartID")).toString()
+            let Cartnumber = getCookie("Cartnumber")
+          //  console.log(cartID)
+            window.document.location = `/MycartOne?KeyOne=${Cartnumber}&KeyTwo=${cartID}&KeyThree=Halepharmacy`     
+      }
+       else if(Status === "Loggedinuser"){
+        //alert(Status)
+          let cartID = getCookie("cartID")
+          let Identity =  getCookie("inputEmail")
+          window.document.location = `/Mycarttwo?KeyOne=${Identity}&KeyTwo=${cartID}&KeyThree=Halepharmacy`
+      
+      }else{
+        // alert(alert(Status))
+      }
+       }
+      
+      
+      
+       function OpenCheckoutbtn(Status){
+            if(Status === 'Loggedinuser'){
+              let Identity =  getCookie("inputEmail")
+              window.document.location = `/Checkorderpageusers?KeyOne=${Identity}&Keytwo=Halepharmacy`
+            }else{
+              let StoreID = (getCookie("StoreID")).toString()  
+              window.document.location = `/Checkorderpagevisitor?KeyOne=${StoreID}&Keytwo=Halepharmacy`
+            }
+       }
+      
+       
+      
+      
+       function OpenHistoryButton(Status){
+            if(Status === 'Loggedinuser'){
+              let Identity =  getCookie("inputEmail")
+              window.document.location = `/Historypageusers?KeyOne=${Identity}&Keytwo=Halepharmacy`
+            }else{
+              let StoreID = (getCookie("StoreID")).toString()  
+              window.document.location = `/Historypagevisitor?KeyOne=${StoreID}&Keytwo=Halepharmacy`
+            }
+       }
+      
+          
+          </script>
+</body>
+
+</html>

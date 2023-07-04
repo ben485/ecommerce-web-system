@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hale Pharmacy | Admin Dashbaord.</title>
+    <link href="../assets/css/application.min.css" rel="stylesheet">
+    <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+    <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+        <![endif]-->
+    <link rel="shortcut icon" href="../assets/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Sing App - Bootstrap 4 Admin Dashboard Template">
+    <meta name="keywords" content="bootstrap admin template,admin template,admin dashboard,admin dashboard template,admin,dashboard,bootstrap,template">
+    <meta name="author" content="Flatlogic LLC">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+    <script src="../assets/js/charts/d3-version-wrapper.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
+   
+
+    </script>
+
+</head>
+
+<body class="">
+
+    <nav  class="sidebar" >
+        <!-- need this .js class to initiate slimscroll -->
+        <div class="js-sidebar-content">
+            <header class="logo d-none d-md-block" style="background-color:white ;position: relative;">
+                <img src="../assets/img/hale_logo1.png" width="120px">
+            </header>
+           
+            <ul class="sidebar-nav" style="position:fixed;">
+                <li class=" active ">
+             
+                    <a href="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fi flaticon-home"></i>
+                    </span>
+                    Dashboard
+                   
+                </a>
+                  
+                </li>
+                <li class="">
+                    <a href="/AdminOrderList">
+                    <span class="icon">
+                        <i class="fi flaticon-layers"></i>
+                    </span>
+                    Orders
+                  
+                </a>
+                </li>
+
+                <li class="">
+                    <a href="/AdminSentItemList">
+                    <span class="icon">
+                        <i class="fi flaticon-layers"></i>
+                    </span>
+                    On Delivery
+                  
+                </a>
+                </li>
+
+
+                <li class="">
+                    <a href="/Customerlist">
+                    <span class="icon">
+                      <i class="fi flaticon-users"></i>
+                    </span>
+                    Customers
+                  
+                </a>
+                </li>
+                
+                <li class="">
+                    <a href="/Adminitemlist">
+                    <span class="icon">
+                      <i class="fi flaticon-database-1"></i>
+                    </span>
+                    Inventory
+                </a>
+                </li>
+              
+               
+                <li class="">
+                    <a class="collapsed" href="/Adminpaymentpage" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fi flaticon-equal-1"></i>
+                    </span>
+                   Payment
+               
+                </a>
+                    
+                </li>
+                <li class="">
+                    <a class="collapsed" href="/Adminorderhistory" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fi flaticon-folder-10"></i>
+                    </span>
+                   History
+               
+                </a>
+                    
+                </li>
+            </ul>
+       
+          
+            
+            
+                
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->
+    <nav class="page-controls navbar navbar-dashboard">
+
+        <div class="container-fluid">
+            <!-- .navbar-header contains links seen on xs & sm screens -->
+            <div class="navbar-header mr-md-3">
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fi flaticon-user"></i> Account Settings
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Purchase History</a></li>
+                      <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                  </div>
+              
+             
+            </div>
+
+         
+            <div class="navbar-header mobile-hidden">
+             
+               
+               
+            </div>
+        </div>
+    </nav>
+   
+  
+
+    <div class="content-wrap">
+        <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
+        <main id="content" class="content" role="main">
+            <nav aria-label="Page navigation example" style="margin-right:150px ;">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item">
+                    <a href="/Addnewproducts">
+                        <button  class="btn btn-md btn-primary">   <i class="fi flaticon-database-1"></i> Add new Product</button>
+                    </a>
+                 
+                  </li>
+                 
+                
+               
+                  <li class="page-item">
+                    <a style="color:black;font-weight: 400;" class="page-link" href="../dashboard/login.html"> <i class="fi flaticon-users"></i> Add Department</a>
+                  </li>
+                </ul>
+              </nav>
+            <h1 class="page-title" style="margin-left:50px;">
+              <img src="../img/test-tube.png" width="60px;">  Welcome ,
+                
+            </h1>
+            <div class="analytics">
+                <div class="analytics-side">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6" style="margin-left:50px;">
+                            <div class="pb-xlg h-100">
+                                <section class="widget mb-0 h-60">
+                                    <header>
+                                        <h5>Total Orders(Yearly)</h5>
+                                        <div class="widget-controls">
+                                            <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
+                                        </div>
+                                    </header>
+                                    <div class="widget-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-lg">
+                                            <h4 data-toggle="tooltip" data-placement="right" title="+20% vs Yesterday"> <span id="TotalOrders"></span> </h2>
+                                            <i class="la la-lg la-arrow-right text-primary rotate-315"></i>
+                                        </div>
+                                       
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-3 col-md-6" style="margin-left:50px;">
+                            <div class="pb-xlg h-100">
+                                <section class="widget mb-0 h-60">
+                                    <header>
+                                        <h5>Received Payments (Yearly)</h5>
+                                        <div class="widget-controls">
+                                            <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
+                                        </div>
+                                    </header>
+                                    <div class="widget-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-lg">
+                                            <h4 data-toggle="tooltip" data-placement="right" title="+20% vs Yesterday"> GHS <span id="TotalPayments"></span></h4>
+                                            <i class="la la-lg la-arrow-right text-primary rotate-315"></i>
+                                        </div>
+                                       
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6" style="margin-left:50px;">
+                            <div class="pb-xlg h-100">
+                                <section class="widget mb-0 h-60">
+                                    <header>
+                                        <h5>Total Customers</h5>
+                                        <div class="widget-controls">
+                                            <a data-widgster="close" title="Close" href="#"><i class="la la-remove"></i></a>
+                                        </div>
+                                    </header>
+                                    <div class="widget-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-lg">
+                                            <h4 data-toggle="tooltip" data-placement="right" title="+20% vs Yesterday"><span id="Customers"></h4>
+                                            <i class="la la-lg la-arrow-right text-primary rotate-315"></i>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+                  
+                   
+                            <div class="widget-body" style="width: 90%; margin-bottom: 100px;">
+                                <table class="table table-sm" id="datatable">
+                                    <thead>
+                                    <tr>
+                                        <th class="d-none d-md-table-cell">#</th>
+                                   
+                                        <th>Customer</th>
+                                        
+                                        <th class="d-none d-md-table-cell">Email</th>
+                                      
+                                        <th class="d-none d-md-table-cell">Qty</th>
+                                        <th class="d-none d-md-table-cell">Amount</th>
+
+                                        <th class="d-none d-md-table-cell">Reg. Date </th>
+                                        <th class="d-none d-md-table-cell">Btn</th>
+                                       
+                                    </thead>
+                                    <tbody>
+                                        <%if(ListDrugs.length > 0){ %>
+                                            <% ListDrugs.forEach(function(row, index){%>
+        
+                                           
+                                            <tr>
+                                                <td class="d-none d-md-table-cell"> <%= index +1 %></td>
+                                              
+                                                <td>
+                                                    <%= row.First_Name %> <%= row.Other_Name %>
+                                                </td>
+                                                <td>
+                                                    <%= row.Email %>
+                                                </td>
+                                             
+
+                                                <td class="d-none d-md-table-cell text-semi-muted">
+                                                    <%= row.Quantity  %> 
+                                                </td>
+
+                                                <td class="d-none d-md-table-cell text-semi-muted">
+                                                    <%= row.TotalCost.toFixed(2)  %> 
+                                                </td>
+
+                                                <td class="d-none d-md-table-cell text-semi-muted">
+                                                    <%= row.Today_String %>
+                                                </td>
+                                              
+                                                <td>
+                                                    <a href="/Adminvieworderlist?KeyOne=<%= row.CartID %>&KeyTwo=<%= row.CartNumber %>&KeyThree=<%= row.Username %>&Keyfour=<%= row._id %>">
+                                                        <button class="ViewBtnone">view</button>
+                                                    </a>
+                                                    
+                                                </td>
+                                             
+                                            </tr>
+                                       
+                                    <%});%>
+                                    <%}else{%>   
+                                    
+                                <% } %>
+                                 
+                                    </tbody>
+        
+                                </table>
+                              
+                            </div>
+                
+                        
+                        
+                        <div class="col-10" style="margin-left:50px;">
+                            <section class="widget mb-xlg">
+                                
+                                
+                                <canvas id="myChart" width="800" height="150"></canvas>
+
+                                      
+                                
+                            </section>
+                        </div>
+
+
+
+                      
+                       
+                        
+                    </div>
+                </div>
+                
+
+            <footer class="content-footer hidden-print">
+                    <b style="color: #002B49;">Hale Pharmacy Ltd</b> |  <a href="" 
+                rel="nofollow" target="_blank"><b style="color: #002B49;">Datasus Technologies</b></a>
+            </footer>
+                </div>
+            </div>
+            
+        </main>
+   
+    
+  
+    <!-- common libraries. required for every page-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
+    
+    <script>
+   
+   const ctx = document.getElementById('myChart');
+
+     TotalOrder()
+     PaymentTotal()
+     Customerstotal()
+     Ballgraphchart()
+      
+     function TotalOrder(){
+        
+        $.ajax({
+            type: 'POST',
+            url: '/Autototalorders',
+            ContentType: 'application/json',
+            data: {Ben:'Ben'},
+            success: function(data) {
+            document.getElementById('TotalOrders').textContent = data.TotalCost
+
+            }
+        })
+     }
+
+
+     function PaymentTotal(){
+        
+        $.ajax({
+            type: 'POST',
+            url: '/Autopaymentreceived',
+            ContentType: 'application/json',
+            data: {Ben:'Ben'},
+            success: function(data) {
+            document.getElementById('TotalPayments').textContent = (data.TotalCost).toFixed(2)
+
+            }
+        })
+     }
+
+
+     function Customerstotal(){
+        
+        $.ajax({
+            type: 'POST',
+            url: '/Autocustomerlist',
+            ContentType: 'application/json',
+            data: {Ben:'Ben'},
+            success: function(data) {
+             //   alert(data.TotalCost)
+            document.getElementById('Customers').textContent = data.TotalCost
+
+            }
+        })
+     }
+
+
+
+
+     function Ballgraphchart(){
+        
+        $.ajax({
+            type: 'POST',
+            url: '/FindDataforChat',
+            ContentType: 'application/json',
+            data: {Ben:'Ben'},
+            success: function(data) {
+               
+                   
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'dec'],
+            datasets: [{
+                label: 'Recived Payments (GHS)',
+                data: [data.Jancost, data.Febcost, data.Marcost, data.Aprcost, data.Juncost, data.Julcost, data.Augcost, data.Sepcost, data.Octcost, data.Novcost, data.Deccost  ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+            }
+        })
+     }
+
+
+
+
+
+
+  
+
+
+    </script>
+    
+      
+    
+      
+
+    <!-- common app js -->
+   
+    <script src="../js/app.js"></script>
+
+    <!-- Page scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <!-- page specific js -->
+    <script src="../js/dashboard/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sing App Dashboard - Tables Basic</title>
+        <link href="../assets/css/application.min.css" rel="stylesheet">
+       
+        <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+        <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+        <![endif]-->
+        <link rel="shortcut icon" href="img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="description" content="Sing App - Bootstrap 4 Admin Dashboard Template">
+        <meta name="keywords" content="bootstrap admin template,admin template,admin dashboard,admin dashboard template,admin,dashboard,bootstrap,template">
+        <meta name="author" content="Flatlogic LLC">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+       
+    </head>
+<body>
+            
+                 
+                <div class="container-fluid" style="width: 100%;background-color: white;">
+           
+                    <div class="navbar-header mr-md-3" style="background-color: white;">
+              <img src="../assets/img/hale_logo1.png" width="130px;">
+            
+                    </div>
+               </div>
+            <main id="content" class="content" role="main" style="margin-bottom: 300px;">
+           
+
+
+        <h2 class="page-title" >Incoming  - <span class="fw-semi-bold">Requests</span></h2>
+        <div class="row" style="margin-bottom: 200px;">
+            <div class="col-lg-12" style="margin-bottom: 200px;">
+                <section class="widget" style="margin-bottom: 200px;">
+                    <header>
+                        <h5>
+                            Request <span class="fw-semi-bold">inventory</span>
+                        </h5>
+                       
+                    </header>
+                    <div class="widget-body">
+                        <table class="table table-sm" id="datatable">
+                            <thead>
+                            <tr>
+                                <th class="d-none d-md-table-cell">#</th>
+                                <th>Picture</th>
+                                <th>Product</th>
+                                
+                                <th class="d-none d-md-table-cell">Brand</th>
+                                <th class="d-none d-md-table-cell">Group</th>
+                                <th class="d-none d-md-table-cell">Type </th>
+                                <th class="d-none d-md-table-cell">Unit</th>
+                                <th class="d-none d-md-table-cell">Price</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <%if(ListDrugs.length > 0){ %>
+                                    <% ListDrugs.forEach(function(row, index){%>
+
+                                   
+                                    <tr>
+                                        <td class="d-none d-md-table-cell"> <%= index +1 %></td>
+                                      
+                                        <td>
+                                            <%= row.First_Name %> <%= row.Other_Name %>
+                                        </td>
+                                        <td>
+                                            <%= row.Email %>
+                                        </td>
+                                     
+
+                                        <td class="d-none d-md-table-cell text-semi-muted">
+                                            <%= row.Quantity  %> 
+                                        </td>
+
+                                        <td class="d-none d-md-table-cell text-semi-muted">
+                                            <%= row.TotalCost.toFixed(2)  %> 
+                                        </td>
+
+                                        <td class="d-none d-md-table-cell text-semi-muted">
+                                            <%= row.Today_String %>
+                                        </td>
+                                      
+                                        <td>
+                                            <a href="/Adminvieworderlist?KeyOne=<%= row.CartID %>&KeyTwo=<%= row.CartNumber %>&KeyThree=<%= row.Username %>&Keyfour=<%= row._id %>">
+                                                <button class="ViewBtnone">view</button>
+                                            </a>
+                                            
+                                        </td>
+                                     
+                                    </tr>
+                               
+                            <%});%>
+                            <%}else{%>   
+                            
+                        <% } %>
+                            </tbody>
+
+                        </table>
+                      
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+                    <footer class="content-footer">
+                        Sing HTML5 Version - Made by <a href="https://flatlogic.com" rel="nofollow" target="_blank">Flatlogic</a>
+                    </footer>
+            </main>
+        </div>
+
+
+        <!-- product sale Modal Accept and Sell -->
+        <div class="loader-wrap hiding hide">
+            <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><img src="../img/task.png" width="50px">  Request Detail Dialog</h5>
+                
+                </div>
+                <div class="modal-body">
+                    <div class="card" style="width: 55rem;">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item" style="font-size:15px; ">Product Name  <span class="badge bg-success" style="float:right;font-size: 15px;;">Alovovera Extra</span></li>
+                          <li class="list-group-item" style="font-size:15px; ">Product Brand<span style="float:right;font-size: 15px;;">UK Model</span>
+                          <li class="list-group-item" style="font-size:15px; ">Quanity Rquested  <span class="badge bg-success" style="float:right;font-size: 15px;;">10</span>
+                            <li class="list-group-item" style="font-size:15px; ">Customer Name<span style="float:right;font-size: 15px;;">James Obeng</span>
+                                <li class="list-group-item" style="font-size:15px; ">Customer Telephone  <span style="float:right;font-size: 15px;;">05665757588</span>
+                                    <li class="list-group-item" style="font-size:15px; ">Total Cost  <span style="float:right;font-size: 15px;;">GHS 100.00</span>
+                                        <li class="list-group-item" style="font-size:15px; ">Amount Paid  <span style="float:right;font-size: 15px;;">GHS 100.00</span>
+                                            <li class="list-group-item" style="font-size:15px; ">Payment Method  <span class="badge bg-success"  style="float:right;font-size: 15px;;">MTN MoMo</span>
+                                                <li class="list-group-item" style="font-size:15px; ">Payment Number  <span class="badge bg-success"  style="float:right;font-size: 15px;;">02465758588</span>
+                        </ul>
+                      </div>
+               
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        <!-- common libraries. required for every page-->
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/jquery-pjax/jquery.pjax.js"></script>
+        <script src="../node_modules/popper.js/dist/umd/popper.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../node_modules/bootstrap/js/dist/util.js"></script>
+        <script src="../node_modules/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="../node_modules/widgster/widgster.js"></script>
+        <script src="../node_modules/pace.js/pace.js" data-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+        <script src="../node_modules/hammerjs/hammer.js"></script>
+        <script src="../node_modules/jquery-hammerjs/jquery.hammer.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+        <!-- common app js -->
+        <script src="js/settings.js"></script>
+        <script src="js/app.js"></script>
+
+        <!-- Page scripts -->
+        <script src="../node_modules/jquery-sparkline/jquery.sparkline.js"></script>
+        <!-- page specific js -->
+        <script src="js/tables.js"></script>
+    </body>
+</html>
