@@ -16,5 +16,8 @@ router.get('/forget-password', ForgetPassWordPage)
 router.post('/update-password', UpdatePassword)
 
 
+router.get('/paymentpage', function(req, res) {
+   res.render('payment_Momo')
+})
 
 module.exports = router;

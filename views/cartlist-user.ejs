@@ -188,47 +188,63 @@
     </head>
 
     <body>
-        <div class="shopping-cart">
+        <div class="shopping-cart" style="height: max-content;">
             <!-- Title -->
-            <div class="title">
-              Shopping Bag
+            <div class="title" style="display: flex; justify-content: space-between; margin-top: -15px; padding: 5px;">
+               <h4>Shopping Bag</h4>
+               <h4>Total Cost : <span>$</span><span id="TotalDue">0.00</span></h4>
             </div>
            
             <!-- Product #1 -->
+            <%if(results.length > 0){ %>
+                <% results.forEach(function(row, index){%>
             <div class="item">
               <div class="buttons">
                 <span class="delete-btn"><i class="fa-solid fa-trash" style="color: red; font-weight: bolder;"></i></span>
-                <span class="like-btn"></span>
+                
               </div>
            
               <div class="image">
-                <img src="images/Durol.jpg" alt="" style="width:100px"/>
+                <img src="/images/Durol.jpg" alt="" style="width:80px"/>
               </div>
            
               <div class="description">
-                <span>Common Projects</span>
-                <span>Bball High</span>
-                <span>White</span>
+                <span><%= row.Product_Name %></span>
+                
               </div>
            
               <div class="quantity">
                 <button class="plus-btn" type="button" name="button">
                     <i class="fa-solid fa-plus"></i>
                 </button>
-                <input type="text" name="name" value="1">
+                <input type="text" name="name" class="Quantity" value="<%= row.Quantity %>" readonly>
                 <button class="minus-btn" type="button" name="button">
                     <i class="fa-solid fa-minus"></i>
                 </button>
               </div>
            
-              <div class="total-price">$549</div>
-            </div>
-  
+              <div class="total-price" style="width: 70px;">
+                <span>$</span> <span><%= row.Selling_price %></span>
+              </div>
 
+              <div class="total-price" style="width: 70px;"> <span>$</span> <span></span></div>
+
+              <div style="display: none;">
+                <p id="rowID"><%= row.rowID %></p>
+                <p id="userID"><%= row.userID %></p>
+                <p id="userID"><%= row.ProductID %></p>
+             </div>
+            </div>
+            <%});%>
+            <%}else{%>  
+            
+        <% } %>
+
+            <div>
+                <button style="width: 100%; background-color: #7EC855; padding: 5px; " id="CheckOutPageVisitor">Check Out</button>
+            </div>
           </div>
     </body>
-
-    <script>
-
-    </script>
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/cart.js"></script>
 </html>

@@ -2,7 +2,9 @@ let express = require('express')
 let router = express.Router();
 
 const {FetchProductListForIndexPage, CheckIfUserIsLoggedIn} = require('../Controllers/IndexController');
-const {SavedVistorCartInfo, SavedUserCartInfo, FetchCartNuberForUsers, FetchCartNuberForVisitors, DetermineUserTypeForRedirect, CartItemsListForUser, CartItemsListForVisitor, UpdateCartsItemsMinus, UpdateCartsItemsPlus, DeleteItemFromDB} = require('../Controllers/CartController')
+const {SavedVistorCartInfo, SavedUserCartInfo, FetchCartNuberForUsers, FetchCartNuberForVisitors, DetermineUserTypeForRedirect, CartItemsListForUser, CartItemsListForVisitor, UpdateCartsItemsMinus, UpdateCartsItemsPlus, DeleteItemFromDB} = require('../Controllers/CartController');
+const {CheckOutUserType, UserCheckOutPage, visitorCheckOutPage} = require('../Controllers/CheckOutController');
+const {ReceivePaymentPost, PaymentSuccess} = require('../Controllers/PaymentController')
 
 /////////////index page route/////////////////
 router.get('/', FetchProductListForIndexPage);
@@ -27,5 +29,14 @@ router.post('/update-carts-quantity-plus', UpdateCartsItemsPlus)
 /////////////////////deleting items from carts//////////////////
 router.post('/delete-items-from-carts', DeleteItemFromDB)
 
+
+/////////////CheckOut Page////////////////////////////////////////////////////////
+router.get('/Checkout-user-type/:userID', CheckOutUserType);
+router.get('/user-check-out-page', UserCheckOutPage);
+router.get('/visitors-check-out-page/:userID', visitorCheckOutPage)
+
+////////////////////Payment Route////////////////
+router.post('/receive-payment', ReceivePaymentPost,);
+router.get('/payment-sucess', PaymentSuccess)
 
 module.exports = router;

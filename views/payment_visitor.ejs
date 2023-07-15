@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce Checkout Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group select {
+      height: 35px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Checkout (GHS <%= Total.toFixed(2) %>)</h1>
+    <form>
+      <div class="form-group">
+        <label for="fullname">First Name:</label>
+        <input type="text" id="FirstName" name="FirstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="fullname">Last Name:</label>
+        <input type="text" id="LastName" name="LastName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="Address" name="Address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="City" name="City" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">Neighbourhood:</label>
+        <input type="text" id="Neighbourhood" name="Neighbourhood" required>
+      </div>
+
+      <div class="form-group">
+        <label for="city">State / Region:</label>
+        <input type="text" id="State" name="State" required>
+      </div>
+   
+      <div class="form-group">
+        <label for="zipcode">GPS Code:</label>
+        <input type="text" id="GPSCODE" name="GPSCODE" required>
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode">Telephone:</label>
+        <input type="text" id="Telephone" name="Telephone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode">Mobile:</label>
+        <input type="text" id="Mobile" name="Mobile" required>
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode">Email:</label>
+        <input type="text" id="Email" name="Email" required>
+      </div>
+
+      <div class="form-group" style="display: none;">
+        <label for="zipcode">Amount:</label>
+        <input type="text" id="Amount" name="Amount" value="<%= Total.toFixed(2) %>" required>
+      </div>
+
+      <div class="form-group">
+         <button type="button" id="PaynowButton">Pay Now (GHS <%= Total.toFixed(2) %>)</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script> 
+
+<script>
+    document.getElementById('PaynowButton').addEventListener('click', function(e){
+      e.preventDefault()
+      let FirstName = (document.getElementById('FirstName').value).trim()
+      let LastName = (document.getElementById('LastName').value).trim()
+      let Address = (document.getElementById('Address').value).trim()
+      let City = (document.getElementById('City').value).trim()
+      let Neighbourhood = (document.getElementById('Neighbourhood').value).trim()
+      let State = (document.getElementById('State').value).trim()
+      let GPSCODE = (document.getElementById('GPSCODE').value).trim()
+
+      let Telephone = (document.getElementById('Telephone').value).trim()
+      let Mobile = (document.getElementById('Mobile').value)
+      let Email = (document.getElementById('Email').value).trim()
+
+      if(FirstName !== '' && LastName !== '' && Address !== '' && City !== '' && Neighbourhood !== '' && State !== '' && GPSCODE !== '' && Telephone !== '' && Email !== ''){
+       
+        let id = () => {
+                    return Math.floor((1 + Math.random()) * 0x1000000000000)
+                        .toString(16)
+                        .substring(1);
+                  }
+               let MyID = id()
+               let reference = MyID
+
+               payWithPaystack(MyID)
+      }else{
+        alert('You need to ensure that all the fields are filled correctly')
+      }
+    })
+
+
+    function payWithPaystack(transactionId) {
+      let amount = Number(document.getElementById('Amount').value)
+      let FirstName = (document.getElementById('FirstName').value).trim()
+      let LastName = (document.getElementById('LastName').value).trim()
+      let Address = (document.getElementById('Address').value).trim()
+      let City = (document.getElementById('City').value).trim()
+      let Neighbourhood = (document.getElementById('Neighbourhood').value).trim()
+      let State = (document.getElementById('State').value).trim()
+      let GPSCODE = (document.getElementById('GPSCODE').value).trim()
+      let Telephone = (document.getElementById('Telephone').value).trim()
+      let Mobile = (document.getElementById('Mobile').value)
+      let Email = (document.getElementById('Email').value).trim()
+
+      let storedDatastring = localStorage.getItem('halecommerce');
+      let storedData = JSON.parse(storedDatastring);
+      let userID = (storedData.userID).trim()
+
+        let Today = new Date()
+        let String_Date = Today.toLocaleDateString().split(",")[0]
+        let Word_Date = Today.toDateString()
+        let Year = Today.getFullYear()
+        let Month = Today.getMonth()+1
+        let Hour = Today.getHours()
+        let Minute = Today.getMinutes()
+        let Time 
+
+        if(Minute < 10){
+          Time = Hour+''+':'+Minute
+        }else{
+          Time = Hour+''+':'+Minute
+        }
+
+   let handler = PaystackPop.setup({
+     key: 'pk_test_ddb3a7af5817c8ebfcc6883b186bb647fcd52b66', // Replace with your public key
+     email: Email,
+     amount: amount*100,
+
+
+     ref:  transactionId,// generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+     // label: "Optional string that replaces customer email"
+     currency: 'GHS',
+     channels: ['mobile_money', 'card'],
+     first_name: FirstName,
+     last_name : LastName,
+     metadata: {
+       
+     },
+     onClose: function(){
+     alert('Window closed.');
+     },
+      callback: function(response){
+      let message = 'Payment complete! Reference: ' + response.reference;
+    let Data = {reference: response.reference, Amount:amount,FirstName:FirstName, LastName:LastName, Address:Address, City:City, Neighbourhood:Neighbourhood, State:State, GPSCODE:GPSCODE,Telephone:Telephone, Mobile:Mobile, Email:Email, String_Date:String_Date, Word_Date:Word_Date, Year:Year, Month:Month, Time:Time, userID:userID   }
+
+     $.ajax({
+            type: 'POST',
+            url: '/receive-payment',
+            ContentType: 'application/json',
+            data: Data,
+            success: function(data) {
+              console.log(data)
+             if(data.Status === 'success'){
+              window.location = `/payment-sucess`
+                
+             }else{
+               alert(data.Desc)
+             }
+            }
+         })
+     
+    
+
+       var alertList = document.querySelectorAll('.alert')
+        alertList.forEach(function(alert) {
+         new bootstrap.Alert(alert)
+      })
+     }
+      });
+       handler.openIframe();
+        }
+
+
+
+       
+</script>
+</html>

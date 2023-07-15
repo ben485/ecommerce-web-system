@@ -13,7 +13,7 @@ const SavedVistorCartInfo = async(req, res) => {
    let userType = 'visitor'
    let userEmail = 'visitor'
    let userID = (req.body.userID).trim()
-   let Data = {Product_Name, ProductID, Selling_price, fileID, userProductstId, Quantity, rowID, userType, userEmail, userID, BrandID, NameID}
+   let Data = {Product_Name, ProductID, Selling_price, fileID, userProductstId, Quantity, rowID, userType, userEmail, userID, BrandID, NameID, status:'Pending', orderID:''}
    let sql = `INSERT INTO carts SET ?`;
    await insertIntoDB(sql, Data);
    res.status(200).json({Mes:'Success'})
@@ -33,7 +33,7 @@ const SavedUserCartInfo = async(req, res) => {
     let userType = 'user'
     let userEmail = req.user.inputEmail
     let userID = (req.user.userID).trim()
-    let Data = {Product_Name, ProductID, Selling_price, fileID, userProductstId, Quantity, rowID, userType, userEmail, userID, BrandID, NameID}
+    let Data = {Product_Name, ProductID, Selling_price, fileID, userProductstId, Quantity, rowID, userType, userEmail, userID, BrandID, NameID, status:'Pending', orderID:''}
     let sql = `INSERT INTO carts SET ?`;
     await insertIntoDB(sql, Data);
     res.status(200).json({Mes:'Success'})
@@ -43,16 +43,16 @@ const SavedUserCartInfo = async(req, res) => {
  const FetchCartNuberForUsers = async(req, res) => {
     let userID = (req.user.userID).trim()
     let userEmail = (req.user.inputEmail).trim()
-    let sql = `SELECT SUM(Quantity) AS Total FROM carts WHERE userID = ? AND userEmail = ?`;
-    let values = [userID, userEmail];
+    let sql = `SELECT SUM(Quantity) AS Total FROM carts WHERE userID = ? AND userEmail = ? AND status = ?`;
+    let values = [userID, userEmail, 'Pending'];
     let Sum = await findSumOfItemsInDB(sql, values);
     res.status(200).json(Sum.Total)
  }
 
  const FetchCartNuberForVisitors = async(req, res) => {
     let userID = (req.body.userID).trim()
-    let sql = `SELECT SUM(Quantity) AS Total FROM carts WHERE userID = ?`;
-    let values = [userID];
+    let sql = `SELECT SUM(Quantity) AS Total FROM carts WHERE userID = ? AND status = ?`;
+    let values = [userID, 'Pending'];
     let Sum = await findSumOfItemsInDB(sql, values);
     res.status(200).json(Sum.Total)
  }
@@ -69,8 +69,8 @@ const SavedUserCartInfo = async(req, res) => {
  const CartItemsListForUser = async(req, res) => {
     let userEmail = req.user.inputEmail
     let userID = (req.user.userID).trim()
-    let sql = `SELECT * FROM carts WHERE userEmail = ? AND userID = ?`;
-    let values = [userEmail, userID];
+    let sql = `SELECT * FROM carts WHERE userEmail = ? AND userID = ? AND status = ?`;
+    let values = [userEmail, userID, 'Pending'];
     let results = await fetchItemsFromDB(sql, values);
     res.render('cartlist-user', {results})
  }
@@ -78,8 +78,8 @@ const SavedUserCartInfo = async(req, res) => {
 
  const CartItemsListForVisitor = async(req, res) => {
     let userID = (req.params.userID).trim()
-    let sql = `SELECT * FROM carts WHERE userID = ?`;
-    let values = [userID];
+    let sql = `SELECT * FROM carts WHERE userID = ? AND status = ?`;
+    let values = [userID, 'Pending'];
     let results = await fetchItemsFromDB(sql, values);
     res.render('cartlist-visitor', {results})
  }
@@ -113,6 +113,9 @@ const SavedUserCartInfo = async(req, res) => {
     await deleteItemFromDB(sql, values)
     res.status(200).json({Mes:'Success'})
   }
+
+
+
 
 
 module.exports = {

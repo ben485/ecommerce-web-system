@@ -117,3 +117,11 @@ $('.minus-btn').on('click', function(e) {
             }
          })
     }
+
+
+    document.getElementById('CheckOutPageVisitor').addEventListener('click', function(e){
+        let storedDatastring = localStorage.getItem('halecommerce');
+        let storedData = JSON.parse(storedDatastring);
+        let userID= (storedData.userID).trim()
+        window.location = `/Checkout-user-type/${userID}`
+    })
